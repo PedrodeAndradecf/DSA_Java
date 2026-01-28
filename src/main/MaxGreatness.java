@@ -36,4 +36,26 @@ public class MaxGreatness {
 
         return maxG;
     }
+
+    public static int findMAxGreatnessGreedy(List<Integer> array){
+        int n = array.size();
+
+        if(array == null || n == 0) return 0;
+
+
+
+        Collections.sort(array);
+
+        int target = 0;
+
+        for(int i = 0; i<n; i++){
+            if(array.get(i) > array.get(target)){
+                target++;
+            }
+        }
+
+        return target;
+    }
+
+
 }
